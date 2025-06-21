@@ -25,6 +25,9 @@ A full-stack blog-style web app that allows users to add, view, and manage book 
 Note: 💡 You must get a free API key from Google Books API.
 
 📷 Screenshots:
+
+
+
 ![Homepage](https://github.com/user-attachments/assets/ba1d8d9d-4023-4f8f-84c0-5f6ca8e1bd4e)
 ![order notes](https://github.com/user-attachments/assets/8fb8cf7e-b70f-460f-b5a1-5c75533aa9d0)
 ![notes](https://github.com/user-attachments/assets/37978e50-48bf-4b1e-9a68-bc75cb0d8b3a)
