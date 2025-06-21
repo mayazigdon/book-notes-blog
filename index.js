@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const app = express();
 const port = 3000;
-const api_key = "AIzaSyBjCR5mPfaKuNk1tVML5Y05LjvyPt7gogk"; 
+const api_key = ""; 
 
 const db = new pg.Client({
   user: "postgres",
