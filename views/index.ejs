@@ -1,0 +1,75 @@
+<%- include("./partials/header.ejs") %>
+<% function formatDate(inputDate) {
+    const date = new Date(inputDate);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // months are 0-indexed
+    const year = String(date.getFullYear()).slice(-2); // get last two digits
+  
+    return `${day}/${month}/${year}`;
+  } 
+%>
+<body>
+    <section class="hero">
+        <div class="px-4 py-5 my-5 text-center">
+            <dotlottie-player class = "d-block mx-auto mb-4" src="https://lottie.host/e2da6d47-47df-4784-849e-907033f6871f/0TuhpNdkj9.lottie"
+      background="transparent"
+      speed="1"
+      style="width: 300px; height: 300px"
+      loop
+      autoplay
+    ></dotlottie-player>
+            <h1 class="display-5 fw-bold text-body-emphasis">Maya Zigdon</h1> 
+            <div class="col-lg-6 mx-auto"> 
+                <p class="lead mb-4">Books I have read, Detailed notes for each book. Use the ISBN number to find it from your local library or anywhere else. This page will constantly update as I read more, so bookmark it if you want to check back in a few months.</p>
+                <h2 style="margin-bottom: 20px;">Sort By</h2>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"> 
+                    <form action="/sort" method="post">
+                        <button type="submit" name="sort" value="grade" class="btn btn-outline-primary">Grade</button> 
+                        <button type="submit" name="sort" value="date" class="btn btn-outline-primary">Date</button> 
+                        <button type="submit" name="sort" value="title" class="btn btn-outline-primary">Title</button> 
+                    </form>
+                </div> 
+            </div> 
+        </div>
+    
+    </section>
+    <section class="add-review">
+        <div class="container">
+            <div class="dot-divider"><span></span></div>
+                <a href="/new" class="icon-link">
+                    <i class="fas fa-plus"></i> Add a New Review
+                </a>
+            </div>
+    </section>
+    
+
+    <section class="notes">
+        <div class="container">
+            <% data.forEach(review => {     %>
+                <% let date = formatDate(review.date) %>
+                <div class="note">
+                    <% let booksCoverURL = `https://covers.openlibrary.org/b/isbn/${review.isbn}-M.jpg`; %>
+                    <img src="<%= booksCoverURL %>" alt="Book Cover" class="book-cover">
+                    <h2 class="dm-sans-font"><strong> <%=review.title %> </strong> </h2>
+                    <h4 class="dm-sans-font"> By <%=review.auther  %></h4>
+                    <p  class="dm-sans-font"> > ISBN:<%= review.isbn %></p>
+                    <p  class="dm-sans-font"> > Date read: <%= date %></p>
+                    <p  class="dm-sans-font"> > My grade: <%= review.grade %> /10</p>
+                    <p  class="dm-sans-font"> > <%= review.summary %></p>
+                    <form action="/readNotes" method="post">
+                        <button type="submit"   class="dm-sans-font btn btn-outline-secondary"  name="id" value="<%=review.id %>"> Read my notes </button>
+                        <button type="submit"   class="dm-sans-font btn btn-outline-secondary" formaction="/delete" name="id" value="<%=review.id %>"> Delete </button>
+                    </form>
+                </div>
+           <% }); %> 
+        </div>
+    </section>
+    
+       
+    <script
+        src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+        type="module">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>

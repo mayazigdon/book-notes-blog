@@ -1,0 +1,22 @@
+<%- include("./partials/header.ejs") %>
+    <section class="new-review">
+        <div class="content-new-review">
+            <form class="review-form" action="/add" method="post"> 
+                <h1>New Review </h1>
+                <input type="text" name="title" placeholder="Title" required>
+                <input type="text" name="auther" placeholder="Auther" required>
+                <input type="number" name="grade" placeholder="Grade between 1-10" min="1" max="10" required>
+                <input type="text" name="summary" placeholder="A short summary" required>
+                <textarea class="summary-input" name="notes" placeholder="All of your notes here" required></textarea>
+                <button class="btn btn-primary" type="submit">submit</button>
+                <a href="/" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M15 19L8 12L15 5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Back
+                </a>  
+            </form>
+        </div>
+    </section>
+</body>
+</html>

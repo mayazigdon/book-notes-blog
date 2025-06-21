@@ -1,0 +1,146 @@
+.add-review{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.note{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background-color: whitesmoke;
+    border-radius: 0.5cm;
+    padding: 24px;
+    
+}
+.dot-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 32px 0;
+  }
+
+  .dot-divider::before,
+  .dot-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #bbb;
+  }
+
+  .dot-divider:not(:empty)::before {
+    margin-right: 1em;
+  }
+
+  .dot-divider:not(:empty)::after {
+    margin-left: 1em;
+  }
+
+  .dot-divider span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #444;
+    border-radius: 50%;
+  }
+  
+.dm-sans-font {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  .icon-link {
+    display: inline-flex;
+    align-items: center;
+    color: #1da1f2;
+    font-weight: 500;
+    text-decoration: none;
+    gap: 6px;
+    transition: color 0.2s ease;
+  }
+
+  .icon-link:hover {
+    color: #0d8ddb;
+  }
+
+  .book-cover{
+    float: right;
+    margin: 20px;
+  }
+
+  .full-note{
+    margin-top: 5rem;
+  }
+
+  .book-cover-design{
+    float: right; 
+    border: 1px solid #ddd; 
+    border-radius: 16px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    padding: 16px; 
+    background: white; 
+    width: 320px; 
+    margin: 24px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: #1d4ed8;
+  }
+
+  .back-link svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    stroke-width: 2;
+    stroke: currentColor;
+  }    
+
+  .new-review > .container{
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Adds vertical spacing between inputs */
+    max-width: 400px;
+    margin: auto;
+  }
+
+  .review-form input{
+        padding: 5px;
+        border-radius: 0.1cm;
+  }
+  .summary-input {
+    height: 8rem;
+    padding: 5px;
+    resize: vertical; /* or 'none' to prevent resizing */
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.1cm;
+
+  }
+
+  .content-new-review{
+    background-color: #ddd;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 6rem;
+    max-width: 800px;
+    margin-left: 25%;
+    border-radius: 0.5cm;
+  }
+  
+  
